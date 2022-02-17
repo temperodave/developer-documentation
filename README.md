@@ -13,7 +13,7 @@ Datafi enables you to...
 
 The following guide should quickly and _painlessly_ get you through the process of connecting your data to DatafiCloud with a set of easy to follow instructions.
 
-**_( A sample dataset will be provided in `Step 1` in case you want to jump right into exploring the console)_**
+**_( A sample dataset will be provided in [`Step 1`](#step-1-register-an-account) in case you want to jump right into exploring the console)_**
 
 ## Steps
 
@@ -29,11 +29,11 @@ The following guide should quickly and _painlessly_ get you through the process 
 
 ## Step 1: Register an Account
 
-The first thing you should do is to register an account for datafi, which can be done here: https://dataficloud.com/register.
+The first thing you need do is to [**register an account**](https://dataficloud.com/register) for Datafi.
 
 You will be asked for a name, email, and company name. You will also be provided a small selection of demo datasets to add to your workspace.
 
-After registering, and you just want to explore Datafi with just the sample dataset you selected, go ahead and do that now you can skip ahead to [**Step 4**](#step-4-viewing-your-data).
+After registering, you can skip ahead to [**Step 4**](#step-4-viewing-your-data) if you just want to explore the console with sample dataset provided to you, otherwise proceed to [**Step 2**](#step-2-connect-your-data) to connect a dataset of your own.
 
 ## Step 2: Connect Your Data
 
@@ -43,22 +43,22 @@ There are three ways to connect your data to your Datafi workspace. You can setu
 
 If you want to locally provision an Edge Server for your dataset, instead of using the default Edge Server run by datafi. Complete the following steps:
 
-1. Install Docker Desktop (ref: https://www.docker.com/products/docker-desktop)
+1. Install Docker Desktop (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop))
 2. Open the terminal and run the Datafi Edge Server container while opening port 80 & 443, and mapping those port to your local host with the following:
 
-```
-docker run --rm -p 80:80 -p 443:443 datafi/es:latest
-```
+   ```
+   docker run --rm -p 80:80 -p 443:443 datafi/es:latest
+   ```
 
-3. Go to http://localhost/setup
+3. Open `http://localhost/setup`
 4. Enter a name (eg: "My First Dataset") and the email you used in **Step 1**.
 5. Select your datasource and input the datasource user credentials (the database user should have **_read-only_** access)
 6. Submit and wait for the processing to finish, once complete a `KEY` will be displayed on screen. Copy and save it for the following step.
 7. Stop the container (CTRL+C). and start again with the above generated `KEY` as an environment variable.
 
-```
-docker run --rm -p 80:80 -p 443:443 -e KEY={the_above_generated_key} datafi/es:latest
-```
+   ```
+   docker run --rm -p 80:80 -p 443:443 -e KEY={the_above_generated_key} datafi/es:latest
+   ```
 
 8. You will receive an email with a link to connect the Edge Server and Dataset you just setup to your Datafi workspace. Follow the instructions on screen and click `Configure` and proceed to [**Step 3**](#step-3-configure-your-dataset).
 
