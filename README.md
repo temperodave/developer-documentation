@@ -4,44 +4,35 @@ Datafi is new way to securely consolidate your data from where it lives and acce
 
 Datafi enables you to...
 
-- access your data online
-- connect data from a spectrum of sources into a single place ([full list here](#supported-datasources))
-- invite others to access curated portions of your data.
-- create links/references between different types of datasources.
+- Access your data online.
+- Connect data from a spectrum of sources into a single place. ([full list here](#supported-datasources))
+- Invite others to access curated portions of your data.
+- Create links/references between different types of datasources.
 
 # Quick Start
 
 The following guide should quickly and _painlessly_ get you through the process of connecting your data to DatafiCloud with a set of easy to follow instructions.
 
-**_( A sample dataset will be provided in [`Step 1`](#step-1-register-an-account) in case you want to jump right into exploring the console)_**
+**_( A sample dataset will be provided in when you register a free account in case you want to jump right into exploring the console)_**
 
 ## Steps
 
-1. [Register an Account](#step-1-register-an-account)
-2. [Connect Your Data](#step-2-connect-your-data)
+1. [Connect Your Data](#step-1-connect-your-data)
    - [Local Edge Server Setup (optional)](#local-edge-server-setup)
    - [Default Dataset Setup](#default-dataset-setup)
-   - [Upload CSV Directly](#upload-csv-directly)
-3. [Configure Dataset](#step-3-configure-your-dataset)
-4. [Access Your Data](#step-4-viewing-your-data)
-<!-- 5. configure policies and Access Ratings
-5. invite others -->
+2. [Configure Dataset](#step-2-configure-your-dataset)
+3. [Access Your Data](#step-3-viewing-your-data)
 
-## Step 1: Register an Account
+## Step 1: Connect Your Data
 
-The first thing you need do is to [**register an account**](https://dataficloud.com/register) for Datafi.
+There are three ways to connect your own data to your Datafi workspace. You can setup a local Datafi Edge Server, use the default Datafi Edge Server, or simply upload a CSV file.
 
-You will be asked for a name, email, and company name. You will also be provided a small selection of demo datasets to add to your workspace.
-
-After registering, you can skip ahead to [**Step 4**](#step-4-viewing-your-data) if you just want to explore the console with sample dataset provided to you, otherwise proceed to [**Step 2**](#step-2-connect-your-data) to connect a dataset of your own.
-
-## Step 2: Connect Your Data
-
-There are three ways to connect your data to your Datafi workspace. You can setup a local Datafi Edge Server, use the default Datafi Edge Server, or simply upload a CSV file.
+If you don’t have an account yet ([click here to register a free account](https://dataficloud.com/register)).
+Otherwise proceed to login and configure the dataset using the following instructions.
 
 ### Local Edge Server Setup
 
-If you want to locally provision an Edge Server for your dataset, instead of using the default Edge Server run by datafi. Complete the following steps:
+Complete the following steps if you want to locally provision an Edge Server for your dataset, instead of using the default Edge Server run by datafi:
 
 1. Install Docker Desktop (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop))
 2. Open the terminal and run the Datafi Edge Server container while opening port 80 & 443, and mapping those port to your local host with the following:
@@ -60,7 +51,7 @@ If you want to locally provision an Edge Server for your dataset, instead of usi
    docker run --rm -p 80:80 -p 443:443 -e KEY={the_above_generated_key} datafi/es:latest
    ```
 
-8. You will receive an email with a link to connect the Edge Server and Dataset you just setup to your Datafi workspace. Follow the instructions on screen and click `Configure` and proceed to [**Step 3**](#step-3-configure-your-dataset).
+8. You will receive an email with a link to connect the Edge Server and Dataset you just setup to your Datafi workspace. Follow the instructions on screen and click `Configure` and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
 - Troubleshooting: After setting up the Edge Server, if you can't see any data from the dataset, try restarting the Edge Server using the same `KEY` (repeat step 7)
 
@@ -72,21 +63,13 @@ In the upper left side of the console, click the large blue Add (**+**) button a
 
 Select the type of the Dataset you want to add and enter the credentials for a user with **_read-only_** access.
 
-Click the `Add Dataset` button in the dialog and proceed to [**Step 3**](#step-3-configure-your-dataset).
+Click the `Add Dataset` button in the dialog and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
-### Upload CSV Directly
-
-If you your data exists in a **.CSV** file, you can upload it to datafi any time by clicking the large blue Add (**+**) button and choose `Upload Datafile`.
-
-Choose the File you want to add and create a new Datafile Dataset, or add the file to an existing one. (Datafile Datasets are like normal datasets, but each file acts like a table within the overall dataset)
-
-Click `Add Datafiles` or `Add Dataset` (depending on if you are creating a new dataset, or adding to an existing one) and once the file finishes uploading, click `Continue` and proceed to [**Step 3**](#step-3-configure-your-dataset).
-
-## Step 3: Configure your Dataset
+## Step 2: Configure your Dataset
 
 After Completing **Step 2** you should see an Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. Their are four aspects of configuring a dataset, Overview, Schema, Users, and Rules. Each of which is explained below.
 
-If you are not planning on inviting any other user to you workspace, then the Overview page is probably the only section you need to worry about and you can click `Save` and proceed to [**step 4**](#step-4-viewing-your-data)
+If you are not planning on inviting any other user to you workspace, then the Overview page is probably the only section you need to worry about and you can click `Save` and proceed to [**step 3**](#step-3-viewing-your-data)
 
 (The dialog can be accessed again any time by clicking the edit icon of the dataset you are currently active on, in case you close it before you are finished or want to make a change.)
 
@@ -110,7 +93,7 @@ the User section allows you to invite users to access your dataset, as well as s
 
 the rules sections allows you to create rules that can mask specific fields in your dataset's tables (more details on rules (WIP))
 
-## Step 4: Viewing your data
+## Step 3: Viewing your data
 
 On the [Dataview](https://dataficloud.com/dataview) page you will be able to see a list of datasource that you have access to on the left side of you screen. Choosing a table from one of them will open the contents of that dataset that your [Access Rating](#access-rating-explained) permits, and mask fields according to any rules applied to that dataset.
 
