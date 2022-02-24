@@ -91,7 +91,7 @@ the User section allows you to invite users to access your dataset, as well as s
 
 ### Rules
 
-the rules sections allows you to create rules that can mask specific fields in your dataset's tables (more details on rules (WIP))
+the rules sections allows you to create rules that can mask specific fields in your dataset's tables ([more details on rules](#rule-policies-explained))
 
 ## Step 3: Viewing your data
 
@@ -118,7 +118,7 @@ Access Ratings are split into three different aspects, `Confidentiality`, `Sensi
 | Strict          | Very Sensitive  | Secure        | 4              |
 | Secret          | Hyper Sensitive | Private       | 5              |
 
-When a user tries to view the contents of a dataset, the Access Rating for that user's membership Access Rating is compaired to the datasets Table and Field Access Rating, if all three aspects of that user's aspect rating does not meet or match the access ratings of a field, then that field is hidden.
+When a user tries to view the contents of a dataset, the Access Rating for that user's membership Access Rating is compared to the datasets Table and Field Access Rating, if all three aspects of that user's aspect rating does not meet or match the access ratings of a field, then that field is hidden.
 
 ### Setting Access Ratings
 
@@ -128,11 +128,31 @@ For users, Default Access Ratings can be set at a workspace level, an individual
 
 The Default workspace user Access Ratings and Dataset Access Ratings can be set under the `Workspace Policies` tab of the administration page.
 
-Individual user Access Ratings can be set under the `User Managment` tab of the administration page. (defaults to the workspaces user default access rating)
+Individual user Access Ratings can be set under the `User Management` tab of the administration page. (defaults to the workspaces user default access rating)
 
 User membership level Access Rating are set in the Edit Dataset dialog's `Users` tab. (defaults to user's individual user Access Ratings)
 
 Table and field level Access Ratings are set in the `Schema` tab of the Edit Dataset dialog. (Table defaults to Workspaces default dataset Access Rating, and fields default to the table's Access Rating)
+
+## Rule Policies Explained
+
+Dataset owners are able to configure complex rules to mask dataset fields when [Access Ratings](#access-rating-explained) are insufficient. Rules can be based off of a variety of factors, such as (but not limit to) date, [user group](#user-groups-explained), and a user's Access Rating aspects (Confidentiality, Identity, Sensitivity).
+
+### Where To Set Rules
+
+Policy Rules can be set in two different place. An overview view of all the rules over each dataset you own can be seen on the console [Policies Page's _Rules_ tab](https://dataficloud.com/policies/rules) and is displayed as a list of rules, each with their corresponding dataset name and a description. When creating or editing a dataset, the rules for the _current dataset_ can be seen in the `Rules` tab of the dataset editor dialog. Both places are almost interchangeable and new rules can be added, removed, and edited as you see fit, the only difference is the dataset editor limits the rules to the active dataset.
+
+### What Makes Up a Rule
+
+a rule is divided into two main parts, the `Condition` and the `Statement`.
+
+In the `Conditions` of your rule, you set the logic that will cause your rule to trigger. In this section you can add multiple sub `Conditions`, each with their own Property (_Date_), Condition Type (_is more than_), and Value (_1970/01/01_). By default, when using more than one, conditions use `AND` logic at the top level, however they can be merged into groups and subgroups with either `AND` or `OR` logic.
+
+```
+(Condition-1 && (Condition-2 || Condition-3))
+```
+
+In the `Statements` of your rule, you set the outcome you want your rule to produce. a `Statement` is made up of a table, a field, and one of many anonymize options, which gives you a selection of ways to hide/mask the data in the given fields. Like `Conditions`, a rule can have multiple `Statement`, each with a different table, field, or anonymize option.
 
 ## Supported Datasources
 
