@@ -1,69 +1,70 @@
 # What is Datafi?
 
-Datafi is new way to securely consolidate your data from where it lives and access and share it online. To learn more about Datafi, visit our [website](https://datafi.us/).
+Datafi is a complete data platform that connects data in real-time where it lives, through a data mesh architecture, to provide a unified view of data, security and tools to find, use and share data. To learn more about Datafi, visit our [website](https://datafi.us/).
 
 Datafi enables you to...
 
-- Access your data online.
-- Connect data from a spectrum of sources into a single place. ([full list here](#supported-datasources))
-- Invite others to access curated portions of your data.
-- Create links/references between different types of datasources.
+- Find, use, and share business data in real-time.
+- Connect to virtually any data source. ([full list here](#supported-datasources))
+- Create unified data security and policies.
+- Join data from differnt data sources.
+- Create worksheets and models to visualize data.
+- Build and publish apps using no-code framework.
+- Share and collaborate with others.
+- Audit and report on all data access.
 
 # Quick Start
 
-The following guide should quickly and _painlessly_ get you through the process of connecting your data to DatafiCloud with a set of easy to follow instructions.
+The following guide should quickly get you through the process of connecting your data to Datafi with a set of easy to follow instructions.
 
-**_( A sample dataset will be provided in when you register a free account in case you want to jump right into exploring the console)_**
+**_( A sample dataset will be provided when you register a free account in case you want to jump right into exploring )_**
 
 ## Steps
 
 1. [Connect Your Data](#step-1-connect-your-data)
    - [Local Edge Server Setup (optional)](#local-edge-server-setup)
-   - [Default Dataset Setup](#default-dataset-setup)
+   - [Datafi hosted Edge Server Setup](#hosted-edge-server-setup)
 2. [Configure Dataset](#step-2-configure-your-dataset)
 3. [Access Your Data](#step-3-viewing-your-data)
 
 ## Step 1: Connect Your Data
 
-There are three ways to connect your own data to your Datafi workspace. You can setup a local Datafi Edge Server, use the default Datafi Edge Server, or simply upload a CSV file.
+There are three ways to connect your data to your Datafi workspace. 1) you can setup a local Edge Server, 2) use a Datafi hosted Edge Server, or 3) directly upload CSV files
 
-If you don’t have an account yet ([click here to register a free account](https://dataficloud.com/register)).
-Otherwise proceed to login and configure the dataset using the following instructions.
+You first need to create a user account and workspace. If you don’t have an account ([click here to register a free account](https://home.datafi.us/register)).
 
 ### Local Edge Server Setup
 
-Complete the following steps if you want to locally provision an Edge Server for your dataset, instead of using the default Edge Server run by datafi:
+Complete the following steps to setup a local Edge Server.
 
-1. Install Docker Desktop (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop))
-2. Open the terminal and run the Datafi Edge Server container while opening port 80 & 443, and mapping those port to your local host with the following:
+1. Install Docker Desktop and complete the setup steps (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)) 
+2. Open the terminal and run the Edge Server container with the following command to open ports 80 & 443 and map them to your local host
 
    ```
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
 
-3. Open `http://localhost/setup`
-4. Enter a name (eg: "My First Dataset") and the email you used in **Step 1**.
-5. Select your datasource and input the datasource user credentials (the database user should have **_read-only_** access)
-6. Submit and wait for the processing to finish, once complete a `KEY` will be displayed on screen. Copy and save it for the following step.
-7. Stop the container (CTRL+C). and start again with the above generated `KEY` as an environment variable.
+3. From a browser, open `http://localhost/setup` and configure the Edge Server and enter the following: point of contact email address, data source name, data source type, host and login details. The Username must be **_read-only_** access
+4. Click CHECK to test the connection, then Click Submit to continue. A confirmation screen appears when the process completes, copy the `KEY` for the next setp
+5. From the terminal, stop the Edge Server (CTRL+C) and restart with the following command using the `KEY` as the **KEY** variable.
 
    ```
    docker run --rm -p 80:80 -p 443:443 -e KEY={the_above_generated_key} datafi/es:latest
    ```
 
-8. You will receive an email with a link to connect the Edge Server and Dataset you just setup to your Datafi workspace. Follow the instructions on screen and click `Configure` and proceed to [**Step 2**](#step-2-configure-your-dataset).
+6. The Point of Contact will receive an email with a link to ADD DATASET
+7. Follow the ADD DATASET incstructions and proceed to [**Step 2: Configure your Dataset**](#step-2-configure-your-dataset)
 
-- Troubleshooting: After setting up the Edge Server, if you can't see any data from the dataset, try restarting the Edge Server using the same `KEY` (repeat step 7)
+- Troubleshooting: If you don't see any data from the dataset, repeat set 13
 
-### Default Dataset setup
+### Hosted Edge Server Setup
 
-If you would rather use the Default Datafi Edge Server, instead of provisioning your own, you can do so through the Datafi Console.
+Complete the following steps to setup a Datafi hosted Edge Server for your dataset.
 
-In the upper left side of the console, click the large blue Add (**+**) button and choose `Add Dataset`.
+1. From your workspace, click the blue ADD (**+**) button in the upper left and selecte `Add Dataset`
+2. Select the type of the data source to add then enter the host and user details (the Username must be **_read-only_** access)
+3. Click the `ADD DATASET` button and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
-Select the type of the Dataset you want to add and enter the credentials for a user with **_read-only_** access.
-
-Click the `Add Dataset` button in the dialog and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
 ## Step 2: Configure your Dataset
 
