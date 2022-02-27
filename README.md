@@ -51,16 +51,24 @@ Complete the following steps to setup a local Edge Server.
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
 
-3. From a browser, open ```http://localhost/setup``` and configure the Edge Server and enter the following: point of contact email address, data source name, data source type, host and login details. The user must be **_read-only_** access
-4. Click **CHECK** to test the connection, then Click **Submit** to continue. A confirmation screen appears when the process completes, copy the `KEY` for the next setp
-5. From the terminal, stop the Edge Server (CTRL+C) and restart with the following command using the `KEY` as the **KEY** variable.
+3. From a browser, open `http://localhost/setup` and configure the Edge Server and enter the following: 
+   -  point of contact email address, 
+   -  data source name, 
+   -  data source type, 
+   -  host and login details. The user must be **_read-only_** access
+5. Click CHECK to test the connection, then Click Submit to continue. 
+   - A confirmation screen appears when the process completes
+   - copy the `KEY` for the next setp
+7. From the terminal:
+   - stop the Edge Server (CTRL+C)
+   - restart with the following command using the `KEY` as the **KEY** variable.
 
    ```
    docker run --rm -p 80:80 -p 443:443 -e KEY=`KEY` datafi/es:latest
    ```
 
-6. The Point of Contact will receive an email with a link to **ADD DATASET**
-7. Follow the **ADD DATASET** incstructions and proceed to [**Step 2: Configure your Dataset**](#step-2-configure-your-dataset)
+6. The Point of Contact will receive an email with a link to ADD DATASET
+7. Follow the ADD DATASET instructions and proceed to [**Step 2: Configure your Dataset**](#step-2-configure-your-dataset)
 
 - Troubleshooting: If you don't see any data from the dataset, repeat set 13
 
@@ -68,9 +76,9 @@ Complete the following steps to setup a local Edge Server.
 
 Complete the following steps to setup a Datafi hosted Edge Server for your dataset.
 
-1. From your workspace, click the blue ADD (**+**) button in the upper left and selecte **Add Dataset**
+1. From your workspace, click the blue ADD button in the upper left and selecte Add Dataset
 2. Select the type of the data source to add then enter the host and user details (the user must be **_read-only_** access)
-3. Click the **ADD DATASET** button and proceed to [**Step 2**](#step-2-configure-your-dataset).
+3. Click the ADD DATASET button and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
 
 ## Step 2: Configure your Dataset
