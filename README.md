@@ -5,7 +5,7 @@ Datafi is a complete data platform that connects data in real-time where it live
 Datafi enables you to...
 
 - Find, use, and share business data in real-time.
-- Connect to virtually any data source. ([full list here](#supported-datasources))
+- Connect to virtually any data source. ([ full list here ](#supported-datasources))
 - Create unified data security and policies.
 - Join data from differnt data sources.
 - Create worksheets and models to visualize data.
@@ -17,7 +17,7 @@ Datafi enables you to...
 
 The following guide should quickly get you through the process of connecting your data to Datafi with a set of easy to follow instructions.
 
-**_( A sample dataset will be provided when you register a free account in case you want to jump right into exploring )_**
+**_(A sample dataset is available when you register for an account in case you want to jump right into exploring)_**
 
 ## Steps
 
@@ -31,61 +31,55 @@ The following guide should quickly get you through the process of connecting you
 
 There are three ways to connect your data to your Datafi workspace. 1) you can setup a local Edge Server, 2) use a Datafi hosted Edge Server, or 3) directly upload CSV files
 
-You first need to create a user account and workspace. If you don’t have an account ([click here to register a free account](https://home.datafi.us/register)).
+You first need to create a user account and workspace. If you don’t have an account ([ click here to register for a free account ](https://home.datafi.us/register)).
 
 ### Local Edge Server Setup
 
 Complete the following steps to setup a local Edge Server.
 
-1. Install Docker Desktop and complete the setup steps (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)) 
-2. Verify Docker has been setup by running the following and confirm "Hello from Docker" reply:
-
+1. Install Docker Desktop and complete the setup steps (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) 
+2. Verify Docker has been setup by running the following and confirm `Hello from Docker!` reply:
    ```
    docker run hello-world
-   
    ```
-   
-4. Open the terminal and run the Edge Server container with the following command to open ports 80 & 443 and map them to your local host
-
+3. Open the terminal and run the Edge Server container with the following command to open ports `80` & `443` and map them to your local host
    ```
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
-
-3. From a browser, open `http://localhost/setup` and configure the Edge Server and enter the following: 
+4. From a browser, open [http://localhost/setup](http://localhost/setup) configure the Edge Server and enter the following: 
    -  point of contact email address, 
    -  data source name, 
    -  data source type, 
    -  host and login details. The user must be **_read-only_** access
-5. Click CHECK to test the connection, then Click Submit to continue. 
+
+5. Click `CHECK` to test the connection, if passed click `Submit` to continue. 
    - A confirmation screen appears when the process completes
    - copy the `KEY` for the next setp
-7. From the terminal:
-   - stop the Edge Server (CTRL+C)
+6. From the terminal:
+   - stop the Edge Server by entering `CTRL+C`
    - restart with the following command using the `KEY` as the **KEY** variable.
-
    ```
    docker run --rm -p 80:80 -p 443:443 -e KEY=`KEY` datafi/es:latest
    ```
+7. The Point of Contact will receive an email with a link to `ADD DATASET`
+8. Follow the `ADD DATASET` instructions and proceed to [**Step 2.**](#step-2-configure-your-dataset)
 
-6. The Point of Contact will receive an email with a link to ADD DATASET
-7. Follow the ADD DATASET instructions and proceed to [**Step 2: Configure your Dataset**](#step-2-configure-your-dataset)
-
-- Troubleshooting: If you don't see any data from the dataset, repeat set 13
+- Troubleshooting: If you don't see any data from the dataset, repeat #6
 
 ### Hosted Edge Server Setup
 
 Complete the following steps to setup a Datafi hosted Edge Server for your dataset.
 
-1. From your workspace, click the blue ADD button in the upper left and selecte Add Dataset
-2. Select the type of the data source to add then enter the host and user details (the user must be **_read-only_** access)
-3. Click the ADD DATASET button and proceed to [**Step 2**](#step-2-configure-your-dataset).
+1. From your workspace, click the blue `ADD` button in the upper left and select `Add Dataset`
+2. Select the type of the data source to add then enter the host and user details. The user must be **_read-only_** access
+3. Click the `ADD DATASET` button and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
 
 ## Step 2: Configure your Dataset
 
 After Completing **Step 2** you should see an Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. Their are four aspects of configuring a dataset, Overview, Schema, Users, and Rules. Each of which is explained below.
 
-If you are not planning on inviting any other user to you workspace, then the Overview page is probably the only section you need to worry about and you can click `Save` and proceed to [**step 3**](#step-3-viewing-your-data)
+If you are not planning to invite other users to you workspace, then the Overview page is probably the only section you need to complete.  Click `Save` continue and proceed to [**Step 3**](#step-3-viewing-your-data)
 
 (The dialog can be accessed again any time by clicking the edit icon of the dataset you are currently active on, in case you close it before you are finished or want to make a change.)
 
@@ -99,15 +93,15 @@ The Schema section allows you to configure the following:
 
 - accessability control, determining if any specific tables or fields should be hidden/blocked.
 - renaming tables and fields to have more user friendly names where necessary.
-- Dataset level access rating for tables and fields can be set to have a more in depth control over who can see what information in your dataset. ([More details about Access Ratings](#access-rating-explained))
+- Dataset level access rating for tables and fields can be set to have a more in depth control over who can see what information in your dataset. ([ More details about Access Ratings ](#access-rating-explained))
 
 ### Users
 
-the User section allows you to invite users to access your dataset, as well as set their membership Access Ratings. You will be set as an owner for the dataset by default, which will provide you full access to the data.
+The User section allows you to invite users to access your dataset, as well as set their membership Access Ratings. You will be set as an owner for the dataset by default, which will provide you full access to the data.
 
 ### Rules
 
-the rules sections allows you to create rules that can mask specific fields in your dataset's tables ([more details on rules](#rule-policies-explained))
+The rules sections allows you to create rules that can mask specific fields in your dataset's tables ([ more details on rules ](#rule-policies-explained))
 
 ## Step 3: Viewing your data
 
@@ -119,11 +113,9 @@ In-depth info on various subjects pertaining to the Datafi console.
 
 ## Access Rating Explained
 
-One of the ways that Datafi cloud enables you to secure your information is with Access Ratings. With Access Ratings you can have certain tables or fields be selectively visible to different individuals based off their Access Ratings.
+One of the ways that Datafi enables you to secure your information is with Access Ratings. With Access Ratings you can have certain tables or fields be selectively visible to different individuals based off their Access Ratings.
 
 Access Ratings are split into three different aspects, `Confidentiality`, `Sensitivity`, and `Identity`. Each aspect has a range of security level labels as seen below, with the values in level 0 being the least sensitive and the 5 being the most sensitive.
-
-(Note: If you are unhappy with the default labels, they can be renamed when first setting up your workspace, or in the administration settings )
 
 | Confidentiality | Accessability   | Identity      | Security Level |
 | --------------- | --------------- | ------------- | -------------- |
@@ -174,16 +166,16 @@ In the `Statements` of your rule, you set the outcome you want your rule to prod
 
 Datafi currently supports the following datasources
 
+- CSV files
 - MySQL
 - Salesforce
 - PostgreSQL
 - Maria DB
 - AWS Aurora
 - MSSQL
-- Netsuite Cloud
+- Netsuite
 - Oracle DB
 - Snowflake
-- Microsoft Dynamics
-- CSV file
+- Dynamics
 
 And more are in the works!
