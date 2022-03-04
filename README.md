@@ -59,7 +59,7 @@ Complete the following steps to setup a local Edge Server.
    - stop the Edge Server by entering `CTRL+C`
    - restart with the following command using the `KEY` as the **KEY** variable.
    ```
-   docker run --rm -p 80:80 -p 443:443 -e KEY=`KEY` datafi/es:latest
+   docker run --rm -p 80:80 -p 443:443 -e KEY=<KEY> datafi/es:latest
    ```
 7. The Point of Contact will receive an email with a link to `ADD DATASET`
 8. Follow the `ADD DATASET` instructions and proceed to [**Step 2.**](#step-2-configure-your-dataset)
