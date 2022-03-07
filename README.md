@@ -38,31 +38,33 @@ You first need to create a user account and workspace. If you don’t have an ac
 Complete the following steps to setup a local Edge Server.
 
 1. Install Docker Desktop and complete the setup steps (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) 
-2. Verify Docker has been setup by running the following and confirm `Hello from Docker!` reply:
+2. Verify Docker has been setup by running the following and confirm **Hello from Docker!** reply:
    ```
    docker run hello-world
    ```
-3. Open the terminal and run the Edge Server container with the following command to open ports `80` & `443` and map them to your local host
+3. Open the terminal and run the Edge Server container with the following command to open ports 80 & 443 and map them to your local host
    ```
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
 4. From a browser, open [http://localhost/setup](http://localhost/setup) configure the Edge Server and enter the following: 
+
+   -  <a href="http://localhost/setup" target="_blank"> http://localhost/setup</a> 
    -  point of contact email address, 
    -  data source name, 
    -  data source type, 
    -  host and login details. The user must be **_read-only_** access
 
-5. Click `CHECK` to test the connection, if passed click `Submit` to continue. 
+5. Click **CHECK** to test the connection, if passed click **Submit** to continue. 
    - A confirmation screen appears when the process completes
-   - copy the `KEY` for the next setp
+   - copy the **KEY** for the next setp
 6. From the terminal:
-   - stop the Edge Server by entering `CTRL+C`
-   - restart with the following command using the `KEY` as the **KEY** variable.
+   - stop the Edge Server by entering **CTRL+C**
+   - restart with the following command using the **KEY** as the **_KEY_** variable, without < >.
    ```
    docker run --rm -p 80:80 -p 443:443 -e KEY=<KEY> datafi/es:latest
    ```
-7. The Point of Contact will receive an email with a link to `ADD DATASET`
-8. Follow the `ADD DATASET` instructions and proceed to [**Step 2.**](#step-2-configure-your-dataset)
+7. The Point of Contact will receive an email with a link to **ADD DATASET**
+8. Follow the **ADD DATASET** instructions and proceed to [**Step 2.**](#step-2-configure-your-dataset)
 
 - Troubleshooting: If you don't see any data from the dataset, repeat #6
 
@@ -70,18 +72,18 @@ Complete the following steps to setup a local Edge Server.
 
 Complete the following steps to setup a Datafi hosted Edge Server for your dataset.
 
-1. From your workspace, click the blue `ADD` button in the upper left and select `Add Dataset`
+1. From your workspace, click the blue **ADD** button in the upper left and select **Add Dataset**
 2. Select the type of the data source to add then enter the host and user details. The user must be **_read-only_** access
-3. Click the `ADD DATASET` button and proceed to [**Step 2**](#step-2-configure-your-dataset).
+3. Click the **ADD DATASET** button and proceed to [**Step 2**](#step-2-configure-your-dataset).
 
 
 ## Step 2: Configure your Dataset
 
 After Completing **Step 2** you should see an Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. Their are four aspects of configuring a dataset, Overview, Schema, Users, and Rules. Each of which is explained below.
 
-If you are not planning to invite other users to you workspace, then the Overview page is probably the only section you need to complete.  Click `Save` continue and proceed to [**Step 3**](#step-3-viewing-your-data)
+If you are not planning to invite other users to you workspace, then the Overview page is probably the only section you need to complete.  Click **Save** continue and proceed to [**Step 3**](#step-3-viewing-your-data)
 
-(The dialog can be accessed again any time by clicking the edit icon of the dataset you are currently active on, in case you close it before you are finished or want to make a change.)
+(The dialog can be accessed again any time by clicking the **Edit** icon of the dataset you are currently active on, in case you close it before you are finished or want to make a change.)
 
 ### Overview
 
@@ -115,7 +117,7 @@ In-depth info on various subjects pertaining to the Datafi console.
 
 One of the ways that Datafi enables you to secure your information is with Access Ratings. With Access Ratings you can have certain tables or fields be selectively visible to different individuals based off their Access Ratings.
 
-Access Ratings are split into three different aspects, `Confidentiality`, `Sensitivity`, and `Identity`. Each aspect has a range of security level labels as seen below, with the values in level 0 being the least sensitive and the 5 being the most sensitive.
+Access Ratings are split into three different aspects, **_Confidentiality_**, **_Sensitivity_**, and **_Identity_**. Each aspect has a range of security level labels as seen below, with the values in level 0 being the least sensitive and the 5 being the most sensitive.
 
 | Confidentiality | Accessability   | Identity      | Security Level |
 | --------------- | --------------- | ------------- | -------------- |
@@ -134,13 +136,13 @@ Access ratings can be set in various places, and default access ratings can also
 
 For users, Default Access Ratings can be set at a workspace level, an individual level, and an individual user per dataset level (or membership). For Datasets Default Access Ratings are set at workspace, table, and field levels.
 
-The Default workspace user Access Ratings and Dataset Access Ratings can be set under the `Workspace Policies` tab of the administration page.
+The Default workspace user Access Ratings and Dataset Access Ratings can be set under the **Workspace Policies** tab of the administration page.
 
-Individual user Access Ratings can be set under the `User Management` tab of the administration page. (defaults to the workspaces user default access rating)
+Individual user Access Ratings can be set under the **User Management** tab of the administration page. (defaults to the workspaces user default access rating)
 
-User membership level Access Rating are set in the Edit Dataset dialog's `Users` tab. (defaults to user's individual user Access Ratings)
+User membership level Access Rating are set in the Edit Dataset dialog's **Users** tab. (defaults to user's individual user Access Ratings)
 
-Table and field level Access Ratings are set in the `Schema` tab of the Edit Dataset dialog. (Table defaults to Workspaces default dataset Access Rating, and fields default to the table's Access Rating)
+Table and field level Access Ratings are set in the **Schema** tab of the Edit Dataset dialog. (Table defaults to Workspaces default dataset Access Rating, and fields default to the table's Access Rating)
 
 ## Rule Policies Explained
 
@@ -148,19 +150,19 @@ Dataset owners are able to configure complex rules to mask dataset fields when [
 
 ### Where To Set Rules
 
-Policy Rules can be set in two different place. An overview view of all the rules over each dataset you own can be seen on the console [Policies Page's _Rules_ tab](https://dataficloud.com/policies/rules) and is displayed as a list of rules, each with their corresponding dataset name and a description. When creating or editing a dataset, the rules for the _current dataset_ can be seen in the `Rules` tab of the dataset editor dialog. Both places are almost interchangeable and new rules can be added, removed, and edited as you see fit, the only difference is the dataset editor limits the rules to the active dataset.
+Policy Rules can be set in two different place. An overview view of all the rules over each dataset you own can be seen on the console [Policies Page's _Rules_ tab](https://dataficloud.com/policies/rules) and is displayed as a list of rules, each with their corresponding dataset name and a description. When creating or editing a dataset, the rules for the _current dataset_ can be seen in the **Rules** tab of the dataset editor dialog. Both places are almost interchangeable and new rules can be added, removed, and edited as you see fit, the only difference is the dataset editor limits the rules to the active dataset.
 
 ### What Makes Up a Rule
 
-a rule is divided into two main parts, the `Condition` and the `Statement`.
+a rule is divided into two main parts, the **_Condition_** and the **_Statement_**.
 
-In the `Conditions` of your rule, you set the logic that will cause your rule to trigger. In this section you can add multiple sub `Conditions`, each with their own Property (_Date_), Condition Type (_is more than_), and Value (_1970/01/01_). By default, when using more than one, conditions use `AND` logic at the top level, however they can be merged into groups and subgroups with either `AND` or `OR` logic.
+In the **_Conditions_** of your rule, you set the logic that will cause your rule to trigger. In this section you can add multiple sub **_Conditions_**, each with their own Property (_Date_), Condition Type (_is more than_), and Value (_1970/01/01_). By default, when using more than one, conditions use **AND** logic at the top level, however they can be merged into groups and subgroups with either **AND** or **OR** logic.
 
 ```
 (Condition-1 && (Condition-2 || Condition-3))
 ```
 
-In the `Statements` of your rule, you set the outcome you want your rule to produce. a `Statement` is made up of a table, a field, and one of many anonymize options, which gives you a selection of ways to hide/mask the data in the given fields. Like `Conditions`, a rule can have multiple `Statement`, each with a different table, field, or anonymize option.
+In the **_Statements_** of your rule, you set the outcome you want your rule to produce. a **_Statement_** is made up of a table, a field, and one of many anonymize options, which gives you a selection of ways to hide/mask the data in the given fields. Like **_Conditions_**, a rule can have multiple **_Statement_**, each with a different table, field, or anonymize option.
 
 ## Supported Datasources
 
