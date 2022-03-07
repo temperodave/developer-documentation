@@ -1,6 +1,6 @@
 # What is Datafi?
 
-Datafi is a complete data platform that connects data in real-time where it lives, through a data mesh architecture, to provide a unified view of data, security and tools to find, use and share data. To learn more about Datafi, visit our [website](https://datafi.us/) or <a href="https://datafi.us/" target="_blank">website</a>.
+Datafi is a complete data platform that connects data in real-time where it lives, through a data mesh architecture, to provide a unified view of data, security and tools to find, use and share data. To learn more about Datafi, visit our <a href="https://datafi.us/" target="_blank">website</a>.
 
 Datafi enables you to...
 
@@ -31,13 +31,13 @@ The following guide should quickly get you through the process of connecting you
 
 There are three ways to connect your data to your Datafi workspace. 1) you can setup a local Edge Server, 2) use a Datafi hosted Edge Server, or 3) directly upload CSV files
 
-You first need to create a user account and workspace. If you don’t have an account ([ click here to register for a free account ](https://home.datafi.us/register)). or <a href="https://home.datafi.us/register" target="_blank">click here to register for a free account</a>
+You first need to create a user account and workspace. If you don’t have an account <a href="https://home.datafi.us/register" target="_blank">click here to register for a free account</a>
 
 ### Local Edge Server Setup
 
 Complete the following steps to setup a local Edge Server.
 
-1. Install Docker Desktop and complete the setup steps (ref: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) or <a href="https://www.docker.com/products/docker-desktop" target="_blank">https://www.docker.com/products/docker-desktop</a>
+1. Install Docker Desktop and complete the setup steps (ref: <a href="https://www.docker.com/products/docker-desktop" target="_blank">https://www.docker.com/products/docker-desktop</a> )
 2. Verify Docker has been setup by running the following and confirm **Hello from Docker!** reply:
    ```
    docker run hello-world
