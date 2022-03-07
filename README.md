@@ -46,9 +46,8 @@ Complete the following steps to setup a local Edge Server.
    ```
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
-4. From a browser, open [http://localhost/setup](http://localhost/setup) configure the Edge Server and enter the following: 
+4. Open <a href="http://localhost/setup" target="_blank"> http://localhost/setup</a> in a browser to configure the Edge Server and enter the following: 
 
-   -  <a href="http://localhost/setup" target="_blank"> http://localhost/setup</a> 
    -  point of contact email address, 
    -  data source name, 
    -  data source type, 
