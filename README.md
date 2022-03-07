@@ -153,11 +153,9 @@ Policy Rules can be set in two different place. An overview view of all the rule
 
 ### What Makes Up a Rule
 
-a rule is divided into two main parts, the **_Condition_** and the **_Statement_**.
+A rule is divided into two main parts, the **_Condition_** and the **_Statement_**.
 
 In the **_Conditions_** of your rule, you set the logic that will cause your rule to trigger. In this section you can add multiple sub **_Conditions_**, each with their own Property (_Date_), Condition Type (_is more than_), and Value (_1970/01/01_). By default, when using more than one, conditions use **AND** logic at the top level, however they can be merged into groups and subgroups with either **AND** or **OR** logic.
-
-**(Condition-1 && (Condition-2 || Condition-3))**
 
 In the **_Statements_** of your rule, you set the outcome you want your rule to produce. a **_Statement_** is made up of a table, a field, and one of many anonymize options, which gives you a selection of ways to hide/mask the data in the given fields. Like **_Conditions_**, a rule can have multiple **_Statement_**, each with a different table, field, or anonymize option.
 
