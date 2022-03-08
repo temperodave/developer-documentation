@@ -42,7 +42,11 @@ Complete the following steps to setup a local Edge Server.
    ```
    docker run hello-world
    ```
-3. Open the terminal and run the Edge Server container with the following command to open ports 80 & 443 and map them to your local host
+3. Open the terminal and pull the latest image then run the Edge Server container with the following commands:
+   ```
+   docker pull datafi/es:latest
+   ```
+   
    ```
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
