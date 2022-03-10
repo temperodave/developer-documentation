@@ -82,7 +82,7 @@ Complete the following steps to setup a Datafi hosted Edge Server for your datas
 
 ## Step 2: Configure your Dataset
 
-After Completing **Step 2** you should see an Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. Their are four aspects of configuring a dataset, Overview, Schema, Users, and Rules. Each of which is explained below.
+After Completing this step should see an Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. Their are four aspects of configuring a dataset, Overview, Schema, Users, and Rules. Each of which is explained below.
 
 If you are not planning to invite other users to you workspace, then the Overview page is probably the only section you need to complete.  Click **Save** continue and proceed to [**Step 3**](#step-3-viewing-your-data)
 
