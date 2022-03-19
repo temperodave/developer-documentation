@@ -1,4 +1,8 @@
-theme: jekyll-theme-slate
+# theme: jekyll-theme-slate
+remote_theme: jekyll/minima
 title: Datafi
 # description:
 google_analytics: G-9FC6NKYCYX
+
+plugins:
+ - jekyll-remote-theme
