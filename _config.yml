@@ -2,7 +2,7 @@
 remote_theme: jekyll/minima
 title: Datafi
 # description:
-google_analytics: G-9FC6NKYCYX
+google_analytics: G-0JP120L6XN
 
 plugins:
  - jekyll-remote-theme
