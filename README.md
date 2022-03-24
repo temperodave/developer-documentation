@@ -7,7 +7,7 @@ Datafi enables you to...
 - Find, use, and share business data in real-time.
 - Connect to virtually any data source. ([ full list here ](#supported-datasources))
 - Create unified data security and policies.
-- Join data from differnt data sources.
+- Join data from different data sources.
 - Create worksheets and models to visualize data.
 - Build and publish apps using no-code framework.
 - Share and collaborate with others.
@@ -42,12 +42,9 @@ Complete the following steps to setup a local Edge Server.
    ```
    docker run hello-world
    ```
-3. Open the terminal and pull the latest image then run the Edge Server container with the following commands:
+3. Open the terminal and pull the latest edge-server image then run the Edge Server container with the following commands:
    ```
    docker pull datafi/es:latest
-   ```
-   
-   ```
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
 4. Open <a href="http://localhost/setup" target="_blank">http://localhost/setup</a> in a browser to configure the Edge Server and enter the following: 
@@ -55,11 +52,11 @@ Complete the following steps to setup a local Edge Server.
    -  point of contact email address, 
    -  data source name, 
    -  data source type, 
-   -  host and login details. The user must be **_read-only_** access
+   -  host and login details. **NOTE:** The user must be **_read-only_** access
 
 5. Click **CHECK** to test the connection, if passed click **Submit** to continue. 
    - A confirmation screen appears when the process completes
-   - copy the **KEY** for the next setp
+   - copy the **KEY** for the next step
 6. From the terminal:
    - stop the Edge Server by entering **CTRL+C**
    - restart with the following command using the **KEY** as the **_KEY_** variable, without < >.
@@ -82,17 +79,30 @@ Complete the following steps to setup a Datafi hosted Edge Server for your datas
 
 ## Step 2: Configure your Dataset
 
-After Completing this step should see an Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. Their are four aspects of configuring a dataset, Overview, Schema, Users, and Rules. Each of which is explained below.
+After Completing the step 1, you should see the Edit Dataset dialog which will allow you to configure and edit the details for the dataset you just added. The four tabs we will look at for configuring a dataset are: Overview, Schema, Users, and Rules.If you are not planning to invite other users to your workspace, then the Overview page is probably the only section you need to complete.
 
-If you are not planning to invite other users to you workspace, then the Overview page is probably the only section you need to complete.  Click **Save** continue and proceed to [**Step 3**](#step-3-viewing-your-data)
+Click **Save** continue and proceed to [**Step 3**](#step-3-viewing-your-data)
 
 (The dialog can be accessed again any time by clicking the **Edit** icon of the dataset you are currently active on, in case you close it before you are finished or want to make a change.)
 
 ### Overview
 
-In the dataset Overview you can update the name, description, and tags for your dataset.
+In the dataset Overview you can update the name, description, and tags for your dataset.  This information is used to help other users find this dataset and it’s contents.  
 
 ### Schema
+
+The Schema section allows you to configure how the dataset is viewed by users with the ability to change the following:
+* Icons next to fields names allow creating Dataview Links (which are similar to database joins) and External Links which allow you to link to URLs based on the data in the fields.
+* Catalog Name is the visible name users will see for fields and tables.
+* Accessibility Controls are the following:
+    *  Access can be turned on/off completely for a field with this slider
+    *  Confidentiality - This drop down allows you, the data owner, to specify a confidentiality level for each field.  Users with higher values directly or indirectly assigned are able to see the value.
+    *  Sensitivity - This drop down allows you, the data owner, to specify a sensitivity level for each field.  Users with higher values directly or indirectly assigned are able to see the field.
+    *  Identity -  - This drop down allows you, the data owner, to specify an identity level for each field.  Users with higher values directly or indirectly assigned are able to see the field.
+
+* renaming tables and fields to have more user friendly names where necessary.
+* The trashcan icon allows a table (aka datafile) within the dataset to be removed from view within the system; however, it does not change the underlying table and dataset. 
+
 
 The Schema section allows you to configure the following:
 
@@ -102,11 +112,16 @@ The Schema section allows you to configure the following:
 
 ### Users
 
-The User section allows you to invite users to access your dataset, as well as set their membership Access Ratings. You will be set as an owner for the dataset by default, which will provide you full access to the data.
+The User section allows you to modify access your dataset Users must be previously 
+
+Data Owners are the users with the privilege to modify all aspects of the dataset.  All users in this category will have full access to the dataset and the ability to modify the access to the dataset.
+
+Data Users is the section where users with limited rights are created and managed.  Each user added in this section can have specific values for Confidentiality, Sentitivity, and Identity.  When assigned a value users can see any element with a rating less than or equal to the users assigned value.  
+
+Teams allow users to be grouped and access levels to be assigned based on the group.
 
 ### Rules
-
-The rules sections allows you to create rules that can mask specific fields in your dataset's tables ([ more details on rules ](#rule-policies-explained))
+The rules sections allows you to create rules that can mask specific fields in your dataset's tables.  Rules control how data is seen by users when their specific grants are less than the values necessary to see specific fields. ([ more details on rules ](#rule-policies-explained))
 
 ## Step 3: Viewing your data
 
@@ -131,7 +146,7 @@ Access Ratings are split into three different aspects, **_Confidentiality_**, **
 | Strict          | Very Sensitive  | Secure        | 4              |
 | Secret          | Hyper Sensitive | Private       | 5              |
 
-When a user tries to view the contents of a dataset, the Access Rating for that user's membership Access Rating is compared to the datasets Table and Field Access Rating, if all three aspects of that user's aspect rating does not meet or match the access ratings of a field, then that field is hidden.
+When a user tries to view the contents of a dataset, the Access Rating for that user's membership Access Rating is compared to the datasets Table and Field Access Rating, if all three aspects of that user's aspect rating does not meet or match the access ratings of a field, then that field is hidden.  Rules further modify this to allow the value returned to be altered based on ratings.
 
 ### Setting Access Ratings
 
