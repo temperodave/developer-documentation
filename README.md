@@ -42,12 +42,16 @@ Complete the following steps to setup a local Edge Server.
    ```
    docker run hello-world
    ```
-3. Open the terminal and pull the latest edge-server image then run the Edge Server container with the following commands:
+3. Open the terminal and pull the latest edge-server image, then run the Edge Server container with the following commands.
    ```
-   docker pull datafi/es:latest
-   docker run --rm -p 80:80 -p 443:443 datafi/es:latest
+   docker pull docker://datafi/es:latest
+   docker run --rm -p 80:80 -p 443:443 docker://datafi/es:latest
    ```
-4. Open <a href="http://localhost/setup" target="_blank">http://localhost/setup</a> in a browser to configure the Edge Server and enter the following: 
+   **NOTE**: On some systems (e.g., if you are using **Podman** in place of Docker) you may need elevated **root** permissions to open the 80 and 443 ports. If that is the case, run the below command to enter the root mode before running the above commands.
+   ```
+   sudo -i
+   ```
+4. Open <a href="http://localhost/setup" target="_blank">http://localhost/setup</a> in a browser to configure the Edge Server and enter the following (leave the base address as-is): 
 
    -  point of contact email address, 
    -  data source name, 
@@ -64,9 +68,7 @@ Complete the following steps to setup a local Edge Server.
    docker run --rm -p 80:80 -p 443:443 -e KEY=<KEY> datafi/es:latest
    ```
 7. The Point of Contact will receive an email with a link to **ADD DATASET**
-8. Follow the **ADD DATASET** instructions and proceed to [**Step 2.**](#step-2-configure-your-dataset)
-
-- Troubleshooting: If you don't see any data from the dataset, repeat #6
+8. Click on the **ADD DATASET** link in the email and proceed to **Step 2**. **IMPORTANT**: Be sure to be logged into Datafi (https://home.datafi.us) **before** clicking the link, this will make sure you can continue **Step 2** successfully. If you don't see any data from the dataset or run into some other issue, repeat #6.
 
 ### Hosted Edge Server Setup
 
