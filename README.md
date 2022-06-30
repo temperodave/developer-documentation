@@ -47,6 +47,7 @@ Complete the following steps to setup a local Edge Server.
    docker pull datafi/es:latest
    docker run --rm -p 80:80 -p 443:443 datafi/es:latest
    ```
+   Note: you  will probably get a warning that says `error opening socket connection: token missing in policy`, you can ignore that warning now, and continue to the next step
 4. Open <a href="http://localhost/setup" target="_blank">http://localhost/setup</a> in a browser to configure the Edge Server and enter the following: 
 
    -  point of contact email address, 
