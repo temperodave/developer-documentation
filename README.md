@@ -50,12 +50,13 @@ Complete the following steps to setup a local Edge Server.
    Note: you  will probably get a warning that says `error opening socket connection: token missing in policy`, you can ignore that warning now, and continue to the next step
 4. Open <a href="http://localhost/setup" target="_blank">http://localhost/setup</a> in a browser to configure the Edge Server and enter the following: 
 
-   -  point of contact email address, 
+   -  edge server Base Address (in this case you can keep it as `localhost` as you are running the edge server docker container locally)
+   -  point of contact email address (in the next step you will get an email to this email address, so make sure you have access to the email inbox), 
    -  data source name, 
    -  data source type, 
-   -  host and login details. **NOTE:** The user must be **_read-only_** access
+   -  host and login details for the datasorce 
 
-5. Click **CHECK** to test the connection, if passed click **Submit** to continue. 
+5. Click **CHECK** button above (it will verify if the credentials are correct and is able to connect), if passed you will see a submit button, click **Submit** to continue. 
    - A confirmation screen appears when the process completes
    - copy the **KEY** for the next step
 6. From the terminal:
