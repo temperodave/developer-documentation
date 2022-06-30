@@ -65,7 +65,8 @@ Complete the following steps to setup a local Edge Server.
    ```
    docker run --rm -p 80:80 -p 443:443 -e KEY=<KEY> datafi/es:latest
    ```
-7. The Point of Contact will receive an email with a link to **ADD DATASET**
+7. The Point of Contact email provided above will receive an email with a link to **ADD DATASET** . Before clicking on the link, make sure you have already [signed up for a Free Datafi Account](https://home.datafi.us/register) and is currently logged in. 
+
 8. Follow the **ADD DATASET** instructions and proceed to [**Step 2.**](#step-2-configure-your-dataset)
 
 - Troubleshooting: If you don't see any data from the dataset, repeat #6
