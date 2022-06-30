@@ -56,7 +56,7 @@ Complete the following steps to setup a local Edge Server.
    -  data source type, 
    -  host and login details for the datasorce 
 
-5. Click **CHECK** button above (it will verify if the credentials are correct and is able to connect), if passed you will see a submit button, click **Submit** to continue. 
+5. Click **CHECK** button above (it will verify if the credentials are correct and is able to connect), if passed you will see a submit button at the bottom of the page, click **Submit** to continue. 
    - A confirmation screen appears when the process completes
    - copy the **KEY** for the next step
 6. From the terminal:
