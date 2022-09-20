@@ -1,0 +1,8 @@
+{
+  "label": "Deploy Edge Servers",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Deploy edge servers either in Datafi's cloud infrastructure or on your server"
+  }
+}

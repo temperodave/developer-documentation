@@ -1,0 +1,8 @@
+{
+  "label": "Quick Start",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This guide should quickly get you through the process of connecting your data to Datafi with a set of easy to follow instructions."
+  }
+}
