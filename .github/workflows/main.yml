@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: redkubes/docusaurus-deploy-action@v1
         with:
-          source-folder: ''
+          source-folder: "./"
           git-user: datafi-ci
           git-password: ${{ secrets.DATAFI_CI_GITHUB_TOKEN }}
           deployment-branch: gh-pages
