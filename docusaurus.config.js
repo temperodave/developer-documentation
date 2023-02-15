@@ -76,49 +76,54 @@ const config = {
             // title: "",
             items: [
               {
-                label: "Home",
+                label: "Website",
                 to: "https://datafi.us",
               },
-              // {
-              //   label: "Blog",
-              //   to: "https://blog.datafi.us",
-              // },
               {
-                label: "Docs",
+                label: "Datafi Cloud",
+                to: "https://home.datafi.us",
+              },
+              {
+                label: "Documentation",
                 to: "https://docs.datafi.us",
               },
             ],
           },
           {
-            title: "Community",
+            // title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "Linkedin",
+                to: "https://linkedin.com/company/datafi-us",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "https://blog.datafi.us",
+                href: "https://twitter.com/DatafiLabs",
               },
               {
-                label: "GitHub",
-                href: "https://github.com/datafilabs",
+                label: "YouTube",
+                href: "https://www.youtube.com/channel/UCxgBtPLWrU0y2hwHJ5bcUGQ?view_as=subscriber",
               },
+             
             ],
           },
+          // {
+          //   title: "More",
+          //   items: [
+          //     {
+          //       label: "Twitter",
+          //       to: "",
+          //     },
+          //     {
+          //       label: "Linkedin",
+          //       href: "",
+          //     },
+          //     {
+          //       label: "YouTube",
+          //       href: "",
+          //     },
+          //   ],
+          // },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Datafi Labs, Inc.`,
       },
