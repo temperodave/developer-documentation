@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Supported Datasources
 
-Datafi currently supports the following datasources
+Datafi currently supports the following data sources
 
 - CSV files
 - MySQL
@@ -15,7 +15,9 @@ Datafi currently supports the following datasources
 - MSSQL
 - Netsuite
 - Oracle DB
+- Databricks
+- Synapse
 - Snowflake
 - Dynamics
 
-And more are in the works!
+And 1000s more using ODBC connectors.

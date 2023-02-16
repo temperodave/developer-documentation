@@ -9,7 +9,7 @@ Datafi is a complete data platform that connects data in real-time where it live
 Datafi enables you to...
 
 - Find, use, and share business data in real-time.
-- Connect to virtually any data source. ([ full list here ](#supported-datasources))
+- Connect to virtually any data source. 
 - Create unified data security and governance.
 - Enrich data from different data sources.
 - Create worksheets and models to visualize data.
