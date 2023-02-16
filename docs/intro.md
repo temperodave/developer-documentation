@@ -10,8 +10,8 @@ Datafi enables you to...
 
 - Find, use, and share business data in real-time.
 - Connect to virtually any data source. ([ full list here ](#supported-datasources))
-- Create unified data security and policies.
-- Join data from different data sources.
+- Create unified data security and governance.
+- Enrich data from different data sources.
 - Create worksheets and models to visualize data.
 - Build and publish apps using no-code framework.
 - Share and collaborate with others.
